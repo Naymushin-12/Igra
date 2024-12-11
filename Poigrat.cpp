@@ -1,4 +1,3 @@
-```
 #include <iostream>
 #include <limits> // Для std::numeric_limits
 #include <string> // Для std::string
@@ -82,8 +81,8 @@ int main() {
         cin >> inputRow >> inputCol;
 
         // Проверка ввода на числовое значение
-        if (!isNumber(inputRow)  !isNumber(inputCol)) {
-            cout << "Некорректный ввод. Пожалуйста, введите только цифры." << endl;
+        if (!isNumber(inputRow) || !isNumber(inputCol)) {
+            cout << "Некорректный ввод. Пожалуйста, введите только положительные цифры." << endl;
             continue;
         }
 
@@ -91,7 +90,7 @@ int main() {
         col = stoi(inputCol);
 
         // Проверка корректности ввода
-        if (row < 1  row > SIZE  col < 1  col > SIZE || board[row - 1][col - 1] != ' ') {
+        if (row < 1 || row > SIZE || col < 1 || col > SIZE || board[row - 1][col - 1] != ' ') {
             cout << "Некорректный ход. Учитывайте размерры доски." << endl;
             continue;
         }
@@ -121,4 +120,3 @@ int main() {
 
     return 0;
 }
-```
